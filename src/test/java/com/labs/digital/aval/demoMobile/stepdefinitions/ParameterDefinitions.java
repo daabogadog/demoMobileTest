@@ -8,8 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -33,8 +32,8 @@ public class ParameterDefinitions {
     public void userRole(String actorName)  {
         OnStage.theActorCalled(actorName);
         OnStage.withCurrentActor(
-                WaitUntil.the(LoginUI.logInMain,isVisible()).forNoMoreThan(3).seconds(),
-                Click.on(menu),
+                WaitUntil.the(LoginUI.TITLEDASH,isVisible()).forNoMoreThan(5).seconds(),
+                Click.on(MENU),
                 Click.on(BUTTON_LOG_IN));
 
     }
